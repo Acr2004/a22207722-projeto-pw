@@ -1,0 +1,13 @@
+{% extends 'cursos/layout.html' %}
+
+{% block content %}
+<a href="{% url 'cursos:detalhes_disciplina' project.disciplina.id %}">Voltar à disciplina {{ disciplina.name }}</a>
+
+<h1>{{ project.name }} - Disciplina: {{ project.disciplina }}</h1>
+<h2>{{ project.desc }}</h2>
+
+<img src="{{ project.img.url }}" alt="Imagem Do Projeto">
+
+<a href="{{ project.github }}">Github</a>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block content %}
+
+<form id="auth-form" action="{% url 'portfolio:login' %}" method="post">
+    <h1>Log In</h1>
+
+    {% csrf_token %}
+    <div id="fields">
+        <div class="input-div">
+            <label>Username</label>
+            <input type="text" name="username" placeholder="O seu username" required>
+        </div>
+
+        <div class="input-div">
+            <label>Password</label>
+            <input type="password" name="password" placeholder="A sua password" required>
+        </div>
+    </div>
+
+    <input id="submitBtn" type="submit" value="Submit">
+</form>
+
+<a href="{% url 'reset_password' %}"><button>Reset Password</button></a>
+
+{% endblock %}

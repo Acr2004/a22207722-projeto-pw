@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'portfolio/style.css' %}">
+
+        <title>Aplicação - Meteo</title>
+    </head>
+
+    <body>
+        <header>
+            <a href="{% url 'meteo:meteo' %}">
+                <span id="logo">Meteo</span>
+            </a>
+
+            <nav>
+                <ul>
+                    <a href="{% url 'meteo:api' %}"><li style="color:#fff; font-weight: 600;">API</li></a>
+                </ul>
+            </nav>
+
+            <button id="theme-toggle"><i id="icon-theme" class="fa-solid fa-moon"></i></button>
+        </header>
+
+        <main style="display: flex; flex-direction: column; gap: 40px;">
+            <h1 style="color: var(--text-color);">API de Previsão do Tempo</h1>
+            <p style="color: var(--text-color);">A API de Previsão do Tempo fornece informações meteorológicas para várias cidades. Abaixo estão os detalhes dos endpoints disponíveis, incluindo parametros, métodos de requisição, e exemplos de respostas.</p>
+
+            <ul style="display: flex; flex-direction: column; gap: 20px; color: var(--text-color);">
+                <li>
+                    1. Listar Cidades<br />
+                    Endpoint: /api/cidades/<br />
+                    Método: GET<br />
+                    Descrição: Retorna uma lista de todas as cidades disponíveis.<br />
+
+                    Parâmetros:Nenhum.<br />
+
+                    Resposta Exemplo:<br />
+
+                    <p>
+                        {
+                            "cidades": [
+                                "Lisboa",
+                                "Porto",
+                                "Braga",
+                                "Aveiro"
+                            ]
+                        }
+                    </p>
+                </li>
+
+                <li>
+                    2. Previsão Meteorológica de Hoje<br />
+                    Endpoint: /api/weather/today/<br />
+                    Método: GET<br />
+                    Descrição: Retorna a previsão meteorológica para hoje para uma cidade específica.<br />
+
+                    Parâmetros:<br />
+
+                    city_id (obrigatório): O ID da cidade para a qual deseja a previsão do tempo.<br />
+
+                    <p>
+                        {
+                            {
+                                "owner": "IPMA",
+                                "country": "PT",
+                                "data": [
+                                {
+                                    "precipitaProb": "91.0",
+                                    "tMin": "12.3",
+                                    "tMax": "19.7",
+                                    "predWindDir": "NE",
+                                    "idWeatherType": 9,
+                                    "classWindSpeed": 3,
+                                    "longitude": "-8.1236",
+                                    "forecastDate": "2023-12-16",
+                                    "classPrecInt": 2,
+                                    "latitude": "36.847"
+                                },
+                                "globalIdLocal": 1110600,
+                                "dataUpdate": "2023-12-16T12:56:12"
+                            }
+                        }
+                    </p>
+                </li>
+
+                <li>
+                    3. Previsão Meteorológica para os Próximos 5 Dias<br />
+                    Endpoint: /api/weather/next5days/<br />
+                    Método: GET<br />
+                    Descrição: Retorna a previsão meteorológica para os próximos 5 dias para uma cidade específica.<br />
+
+                    Parâmetros:<br />
+
+                    city_id (obrigatório): O ID da cidade para a qual deseja a previsão do tempo.<br />
+
+                    <p>
+                        {
+
+                          "owner": "IPMA",
+                          "country": "PT",
+                          "data": [
+                            {
+                              "precipitaProb": "100.0",
+                              "tMin": "17.3",
+                              "tMax": "21.8",
+                              "predWindDir": "SW",
+                              "idWeatherType": 9,
+                              "classWindSpeed": 2,
+                              "longitude": "-8.6535",
+                              "forecastDate": "2024-06-08",
+                              "classPrecInt": 2,
+                              "latitude": "40.6413"
+                            },
+                            {
+                              "precipitaProb": "16.0",
+                              "tMin": "17.1",
+                              "tMax": "22.0",
+                              "predWindDir": "NW",
+                              "idWeatherType": 3,
+                              "classWindSpeed": 1,
+                              "longitude": "-8.6535",
+                              "forecastDate": "2024-06-09",
+                              "latitude": "40.6413"
+                            },
+                            {
+                              "precipitaProb": "41.0",
+                              "tMin": "16.1",
+                              "tMax": "22.6",
+                              "predWindDir": "N",
+                              "idWeatherType": 3,
+                              "classWindSpeed": 2,
+                              "longitude": "-8.6535",
+                              "forecastDate": "2024-06-10",
+                              "latitude": "40.6413"
+                            },
+                            {
+                              "precipitaProb": "0.0",
+                              "tMin": "15.2",
+                              "tMax": "21.9",
+                              "predWindDir": "N",
+                              "idWeatherType": 1,
+                              "classWindSpeed": 2,
+                              "longitude": "-8.6535",
+                              "forecastDate": "2024-06-11",
+                              "latitude": "40.6413"
+                            },
+                            {
+                              "precipitaProb": "0.0",
+                              "tMin": "14.7",
+                              "tMax": "21.4",
+                              "predWindDir": "NW",
+                              "idWeatherType": 1,
+                              "classWindSpeed": 2,
+                              "longitude": "-8.6535",
+                              "forecastDate": "2024-06-12",
+                              "latitude": "40.6413"
+                            }
+                          ],
+                            "globalIdLocal": 1010500,
+                            "dataUpdate": "2024-06-08T13:31:02"
+                            }
+                        }
+                    </p>
+                </li>
+            </ul>
+        </main>
+
+        <script src="https://kit.fontawesome.com/90d057b0eb.js" crossorigin="anonymous"></script>
+        <script src="{% static 'portfolio/script.js' %}"></script>
+    </body>
+</html>

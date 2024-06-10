@@ -1,0 +1,15 @@
+{% extends 'bandas/layout.html' %}
+
+{% block content %}
+
+<form action="" method="post" enctype='multipart/form-data'>
+        <h1>Novo Album</h1>
+
+  {% csrf_token %}
+  <table>
+      {{ form }}
+  </table>
+  <input id="submitBtn" type="submit" value="Criar album">
+</form>
+
+{% endblock %}

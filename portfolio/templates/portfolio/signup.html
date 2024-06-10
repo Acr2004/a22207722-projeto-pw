@@ -1,0 +1,39 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block content %}
+
+<form id="auth-form" action="{% url 'portfolio:signup' %}" method="post">
+    <h1>Sign Up</h1>
+
+    {% csrf_token %}
+    <div id="fields">
+        <div class="input-div">
+            <label>Username</label>
+            <input type="text" name="username" placeholder="O seu username" required>
+        </div>
+
+        <div class="input-div">
+            <label>Nome</label>
+            <input type="text" name="nome" placeholder="O seu nome" required>
+        </div>
+
+        <div class="input-div">
+            <label>Apelido</label>
+            <input type="text" name="apelido" placeholder="O seu apelido" required>
+        </div>
+
+        <div class="input-div">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="O seu email" required>
+        </div>
+
+        <div class="input-div">
+            <label>Password</label>
+            <input type="password" name="password" placeholder="Defina a sua password" required>
+        </div>
+    </div>
+
+    <input id="submitBtn" type="submit" value="Criar Conta">
+</form>
+
+{% endblock %}

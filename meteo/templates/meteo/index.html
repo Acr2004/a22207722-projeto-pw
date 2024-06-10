@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'portfolio/style.css' %}">
+
+        <title>Aplicação - Meteo</title>
+
+        <style>
+            #container {
+                display: flex;
+                align-items: center;
+                padding: 40px;
+                width: 70%;
+                border-radius: 8px;
+                border: 5px solid #364dce;
+                font-size: 28px;
+            }
+
+            .color {
+                color: #364dce;
+            }
+
+            main span {
+                font-weight: 800;
+            }
+
+            a button {
+                cursor: pointer;
+                background-color: #364dce;
+                color: #FFF;
+                font-size: 24px;
+                font-weight: 600;
+                border: none;
+                padding: 5px 10px;
+                border-radius: 4px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <a href="{% url 'meteo:meteo' %}">
+                <span id="logo">Meteo</span>
+            </a>
+
+            <nav>
+                <ul>
+                    <a href="{% url 'meteo:api' %}"><li style="color:#fff; font-weight: 600;">API</li></a>
+                </ul>
+            </nav>
+
+            <button id="theme-toggle"><i id="icon-theme" class="fa-solid fa-moon"></i></button>
+        </header>
+
+        <main style="display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 40px;">
+            <div id="container">
+                <div style="width: 50%;">
+                    <img style="width: 100%" src="{{ iconUrl }}" alt="Tempo">
+                </div>
+
+                <div style="width: 50%; display: flex; flex-direction: column; gap: 32px;">
+                    <div class="color" style="font-size: 32px;"><span>Dia:</span> {{ day }}</div>
+
+                    <div style="display: flex; flex-direction: column; gap: 16px;">
+                        <div class="color"><span>Temperatura Máxima:</span> {{ tempMax }}</div>
+                        <div class="color"><span>Temperatura Mínima:</span> {{ tempMin }}</div>
+                        <div class="color"><span>Probabilidade de Precipitação:</span> {{ probabilityPrec }}</div>
+                        <div class="color"><span>Direção do Vento:</span> {{ windDir }}</div>
+                        <div class="color"><span>Velocidade do Vento:</span> {{ windSpeed }}</div>
+                        <div class="color"><span>Longitude e Latitude:</span> {{ long }}, {{ lat }}</div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="{% url 'meteo:nextdays' %}">
+                <button>Previsão de 5 Dias</button>
+            </a>
+        </main>
+
+        <script src="https://kit.fontawesome.com/90d057b0eb.js" crossorigin="anonymous"></script>
+        <script src="{% static 'portfolio/script.js' %}"></script>
+    </body>
+</html>

@@ -1,0 +1,11 @@
+{% extends 'cursos/layout.html' %}
+
+{% block content %}
+    <form action="{% url 'cursos:edita_linguagem' linguagem.id %}" method="post" enctype='multipart/form-data'>
+        <h1>Edita Linguagem</h1>
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input id="submitBtn" type="submit">
+    </form>
+
+{% endblock %}

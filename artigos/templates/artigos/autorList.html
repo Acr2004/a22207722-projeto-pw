@@ -1,0 +1,24 @@
+{% extends 'artigos/layout.html' %}
+
+{% block content %}
+
+<a id="goBack" href="{% url 'artigos:lista_artigos' %}">Lista de Artigos <i class="fa-solid fa-arrow-right"></i></a>
+
+<h1 id="title">Aplicação - Artigos</h1>
+
+<ul class="list">
+    <h3 class="title-list">Lista de Autores:</h3>
+    {% for autor in autores %}
+        <a href="{% url 'artigos:detalhes_autor' autor.id %}">
+            <li class="item">{{ autor }}</li>
+        </a>
+    {% endfor%}
+</ul>
+
+{% if request.user.is_authenticated %}
+    <a href="{% url 'artigos:novo_autor' %}">
+        <button class="newBtn">Criar Autor</button>
+    </a>
+{% endif %}
+
+{% endblock %}

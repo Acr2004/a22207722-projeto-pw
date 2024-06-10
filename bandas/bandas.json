@@ -1,0 +1,273 @@
+{
+    "bandas": [
+    {
+        "name": "Nirvana",
+        "image": "nirvana_image_url",
+        "foundation": "1987-01-01",
+        "albums": [
+            {
+                "name": "Nevermind",
+                "image": "nevermind_image_url",
+                "dataDeCriacao": "1991-09-24"
+            },
+            {
+                "name": "In Utero",
+                "image": "in_utero_image_url",
+                "dataDeCriacao": "1993-09-21"
+            },
+            {
+                "name": "Bleach",
+                "image": "bleach_image_url",
+                "dataDeCriacao": "1989-06-15"
+            },
+            {
+                "name": "MTV Unplugged in New York",
+                "image": "mtv_unplugged_image_url",
+                "dataDeCriacao": "1994-11-01"
+            },
+            {
+                "name": "Incesticide",
+                "image": "incesticide_image_url",
+                "dataDeCriacao": "1992-12-14"
+            }
+        ],
+        "musics": [
+            {
+                "name": "Come As You Are",
+                "spotify_link": "spotify_link_to_come_as_you_are"
+            },
+            {
+                "name": "Heart-Shaped Box",
+                "spotify_link": "spotify_link_to_heart_shaped_box"
+            },
+            {
+                "name": "Lithium",
+                "spotify_link": "spotify_link_to_lithium"
+            },
+            {
+                "name": "All Apologies",
+                "spotify_link": "spotify_link_to_all_apologies"
+            },
+            {
+                "name": "Smells Like Teen Spirit",
+                "spotify_link": "spotify_link_to_smells_like_teen_spirit"
+            }
+        ]
+    },
+    {
+        "name": "Radiohead",
+        "image": "radiohead_image_url",
+        "foundation": "1985-01-01",
+        "albums": [
+            {
+                "name": "OK Computer",
+                "image": "ok_computer_image_url",
+                "dataDeCriacao": "1997-05-21"
+            },
+            {
+                "name": "Kid A",
+                "image": "kid_a_image_url",
+                "dataDeCriacao": "2000-10-02"
+            },
+            {
+                "name": "The Bends",
+                "image": "the_bends_image_url",
+                "dataDeCriacao": "1995-03-13"
+            },
+            {
+                "name": "In Rainbows",
+                "image": "in_rainbows_image_url",
+                "dataDeCriacao": "2007-10-10"
+            },
+            {
+                "name": "Amnesiac",
+                "image": "amnesiac_image_url",
+                "dataDeCriacao": "2001-06-04"
+            }
+        ],
+        "musics": [
+            {
+                "name": "Paranoid Android",
+                "spotify_link": "spotify_link_to_paranoid_android"
+            },
+            {
+                "name": "Creep",
+                "spotify_link": "spotify_link_to_creep"
+            },
+            {
+                "name": "No Surprises",
+                "spotify_link": "spotify_link_to_no_surprises"
+            },
+            {
+                "name": "Karma Police",
+                "spotify_link": "spotify_link_to_karma_police"
+            },
+            {
+                "name": "Fake Plastic Trees",
+                "spotify_link": "spotify_link_to_fake_plastic_trees"
+            }
+        ]
+    },
+    {
+        "name": "Red Hot Chili Peppers",
+        "image": "red_hot_chili_peppers_image_url",
+        "foundation": "1983-01-01",
+        "albums": [
+            {
+                "name": "Californication",
+                "image": "californication_image_url",
+                "dataDeCriacao": "1999-06-08"
+            },
+            {
+                "name": "By the Way",
+                "image": "by_the_way_image_url",
+                "dataDeCriacao": "2002-07-09"
+            },
+            {
+                "name": "Blood Sugar Sex Magik",
+                "image": "blood_sugar_sex_magik_image_url",
+                "dataDeCriacao": "1991-09-24"
+            },
+            {
+                "name": "Stadium Arcadium",
+                "image": "stadium_arcadium_image_url",
+                "dataDeCriacao": "2006-05-09"
+            },
+            {
+                "name": "The Getaway",
+                "image": "the_getaway_image_url",
+                "dataDeCriacao": "2016-06-17"
+            }
+        ],
+        "musics": [
+            {
+                "name": "Californication",
+                "spotify_link": "spotify_link_to_californication"
+            },
+            {
+                "name": "Under the Bridge",
+                "spotify_link": "spotify_link_to_under_the_bridge"
+            },
+            {
+                "name": "Scar Tissue",
+                "spotify_link": "spotify_link_to_scar_tissue"
+            },
+            {
+                "name": "By the Way",
+                "spotify_link": "spotify_link_to_by_the_way"
+            },
+            {
+                "name": "Can't Stop",
+                "spotify_link": "spotify_link_to_cant_stop"
+            }
+        ]
+    },
+    {
+        "name": "The Beatles",
+        "image": "the_beatles_image_url",
+        "foundation": "1960-01-01",
+        "albums": [
+            {
+                "name": "Abbey Road",
+                "image": "abbey_road_image_url",
+                "dataDeCriacao": "1969-09-26"
+            },
+            {
+                "name": "Sgt. Pepper's Lonely Hearts Club Band",
+                "image": "sgt_pepper_image_url",
+                "dataDeCriacao": "1967-06-01"
+            },
+            {
+                "name": "The White Album",
+                "image": "the_white_album_image_url",
+                "dataDeCriacao": "1968-11-22"
+            },
+            {
+                "name": "Revolver",
+                "image": "revolver_image_url",
+                "dataDeCriacao": "1966-08-05"
+            },
+            {
+                "name": "Rubber Soul",
+                "image": "rubber_soul_image_url",
+                "dataDeCriacao": "1965-12-03"
+            }
+        ],
+        "musics": [
+            {
+                "name": "Hey Jude",
+                "spotify_link": "spotify_link_to_hey_jude"
+            },
+            {
+                "name": "Let It Be",
+                "spotify_link": "spotify_link_to_let_it_be"
+            },
+            {
+                "name": "Come Together",
+                "spotify_link": "spotify_link_to_come_together"
+            },
+            {
+                "name": "Yesterday",
+                "spotify_link": "spotify_link_to_yesterday"
+            },
+            {
+                "name": "Here Comes the Sun",
+                "spotify_link": "spotify_link_to_here_comes_the_sun"
+            }
+        ]
+    },
+    {
+        "name": "Led Zeppelin",
+        "image": "led_zeppelin_image_url",
+        "foundation": "1968-01-01",
+        "albums": [
+            {
+                "name": "Led Zeppelin IV",
+                "image": "led_zeppelin_iv_image_url",
+                "dataDeCriacao": "1971-11-08"
+            },
+            {
+                "name": "Led Zeppelin II",
+                "image": "led_zeppelin_ii_image_url",
+                "dataDeCriacao": "1969-10-22"
+            },
+            {
+                "name": "Physical Graffiti",
+                "image": "physical_graffiti_image_url",
+                "dataDeCriacao": "1975-02-24"
+            },
+            {
+                "name": "Houses of the Holy",
+                "image": "houses_of_the_holy_image_url",
+                "dataDeCriacao": "1973-03-28"
+            },
+            {
+                "name": "Led Zeppelin III",
+                "image": "led_zeppelin_iii_image_url",
+                "dataDeCriacao": "1970-10-05"
+            }
+        ],
+        "musics": [
+            {
+                "name": "Stairway to Heaven",
+                "spotify_link": "spotify_link_to_stairway_to_heaven"
+            },
+            {
+                "name": "Whole Lotta Love",
+                "spotify_link": "spotify_link_to_whole_lotta_love"
+            },
+            {
+                "name": "Black Dog",
+                "spotify_link": "spotify_link_to_black_dog"
+            },
+            {
+                "name": "Kashmir",
+                "spotify_link": "spotify_link_to_kashmir"
+            },
+            {
+                "name": "Immigrant Song",
+                "spotify_link": "spotify_link_to_immigrant_song"
+            }
+        ]
+    }]
+}

@@ -1,0 +1,20 @@
+{% extends 'festivais/layout.html' %}
+
+{% block content %}
+<h1>{{ curso.name }}</h1>
+
+<h2>{{ festival.name }}, {{ festival.localizacao }}</h2>
+
+<h4>Bandas:</h4>
+<ul>
+    {% for banda in bandas|dictsort:"name" %}
+        <li>{{ banda.name }}</li>
+    {% endfor %}
+</ul>
+
+<img src="{{ festival.img.url }}" style="width: 200px" alt="Imagem Do Festival">
+
+<br></br>
+
+<a href="{% url 'festivais:lista_festivais' %}">Lista de festivais</a>
+{% endblock %}

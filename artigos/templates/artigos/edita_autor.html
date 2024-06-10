@@ -1,0 +1,11 @@
+{% extends 'artigos/layout.html' %}
+
+{% block content %}
+    <form action="{% url 'artigos:edita_autor' autor.id %}" method="post" enctype='multipart/form-data'>
+            <h1>Edita Autor</h1>
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input id="submitBtn" type="submit">
+    </form>
+
+{% endblock %}

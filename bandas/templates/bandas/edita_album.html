@@ -1,0 +1,12 @@
+{% extends 'bandas/layout.html' %}
+
+{% block content %}
+<form action="{% url 'bandas:edita_album' album.id %}" method="post" enctype='multipart/form-data'>
+        <h1>Edita Album</h1>
+
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input id="submitBtn" type="submit">
+</form>
+
+{% endblock %}

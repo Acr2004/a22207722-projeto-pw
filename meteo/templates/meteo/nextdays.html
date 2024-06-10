@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'portfolio/style.css' %}">
+
+        <title>Aplicação - Meteo</title>
+
+        <style>
+            #container {
+                display: flex;
+                align-items: center;
+                padding: 40px;
+                width: 70%;
+                border-radius: 8px;
+                border: 5px solid #364dce;
+                font-size: 28px;
+            }
+
+            .color {
+                color: #364dce;
+            }
+
+            main span {
+                font-weight: 800;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <a href="{% url 'meteo:meteo' %}">
+                <span id="logo">Meteo</span>
+            </a>
+
+            <button id="theme-toggle"><i id="icon-theme" class="fa-solid fa-moon"></i></button>
+        </header>
+
+        <main style="display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 40px;">
+            <form method="get" action="{% url 'meteo:nextdays' %}">
+                <select name="city_id" onchange="this.form.submit()">
+                    {% for city in cities %}
+                        <option value="{{ city.globalIdLocal }}" {% if city.globalIdLocal == city_id %}selected{% endif %}>
+                            {{ city.local }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </form>
+
+            {% for dia in nextDays %}
+                <div id="container">
+                    <div style="width: 50%;">
+                        <img style="width: 100%" src="{{ dia.iconUrl }}" alt="Tempo">
+                    </div>
+
+                    <div style="width: 50%; display: flex; flex-direction: column; gap: 32px;">
+                        <div class="color" style="font-size: 32px;"><span>Dia:</span> {{ dia.day }}</div>
+
+                        <div style="display: flex; flex-direction: column; gap: 16px;">
+                            <div class="color"><span>Temperatura Máxima:</span> {{ dia.tempMax }}</div>
+                            <div class="color"><span>Temperatura Mínima:</span> {{ dia.tempMin }}</div>
+                            <div class="color"><span>Probabilidade de Precipitação:</span> {{ dia.probabilityPrec }}</div>
+                            <div class="color"><span>Direção do Vento:</span> {{ dia.windDir }}</div>
+                            <div class="color"><span>Velocidade do Vento:</span> {{ dia.windSpeed }}</div>
+                            <div class="color"><span>Longitude e Latitude:</span> {{ dia.long }}, {{ dia.lat }}</div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </main>
+
+        <script src="https://kit.fontawesome.com/90d057b0eb.js" crossorigin="anonymous"></script>
+        <script src="{% static 'portfolio/script.js' %}"></script>
+    </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'portfolio/style.css' %}">
+
+        <title>Portfolio</title>
+
+        <style>
+            body, html {
+                height: 100%;
+            }
+
+            body {
+                display: flex;
+                flex-direction: column;
+            }
+        </style>
+    </head>
+
+    <body style="height: 100%;">
+        <header>
+            <div style="display: flex; flex-direction: row;">
+                <div style="display:flex; align-items:center; justify-content: center;"><img style="width: 24px; height: 24px;" src="{{ iconUrl }}" alt="Tempo"></div>
+                <div style="display: flex; flex-direction: column; gap: 1px; color: #FFF;">
+                    <div id="date"></div>
+                    <div id="time"></div>
+                </div>
+            </div>
+
+            <a href="{% url 'portfolio:index' %}">
+                <span id="logo">Portfolio</span>
+            </a>
+
+            <nav>
+                <ul>
+                    <li><a href="{% url 'portfolio:index' %}">Home</a></li>
+                    <li><a href="{% url 'portfolio:about_me' %}">About Me</a></li>
+                    <li><a href="{% url 'portfolio:tech_tools' %}">TechTools</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Apps</a>
+                        <div class="dropdown-content">
+                            <a href="{% url 'artigos:lista_autores' %}">Artigos</a>
+                            <a href="{% url 'bandas:lista_bandas' %}">Bandas</a>
+                            <a href="{% url 'cursos:lista_cursos' %}">Cursos</a>
+                            <a href="{% url 'meteo:meteo' %}">Meteo</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+
+            {% if request.user.is_authenticated %}
+                <div id="username-logout">
+                    <span id="username">Username: {{ request.user.username }}</span>
+                    <a href="{% url 'portfolio:logout' %}"><button>Log Out</button></a>
+
+                    <button id="theme-toggle"><i id="icon-theme" class="fa-solid fa-moon"></i></button>
+                </div>
+            {% else %}
+                <div>
+                    <a href="{% url 'portfolio:signup' %}"><button>Sign In</button></a>
+                    <a href="{% url 'portfolio:login' %}"><button>Log In</button></a>
+
+                    <button id="theme-toggle"><i id="icon-theme" class="fa-solid fa-moon"></i></button>
+                </div>
+            {% endif %}
+        </header>
+
+        {% block content %}
+        {% endblock %}
+
+        <script src="https://kit.fontawesome.com/90d057b0eb.js" crossorigin="anonymous"></script>
+        <script src="{% static 'portfolio/script.js' %}"></script>
+    </body>
+</html>

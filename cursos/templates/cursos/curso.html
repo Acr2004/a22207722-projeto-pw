@@ -1,0 +1,30 @@
+{% extends 'cursos/layout.html' %}
+
+{% block content %}
+    <a id="goBack" href="{% url 'cursos:lista_cursos' %}"><i class="fa-solid fa-arrow-left"></i> Voltar à lista</a>
+
+    <h1 id="title">{{ curso.name }}</h1>
+
+    <ul class="list">
+        <h3 class="title-list">Disciplinas</h3>
+        {% for disciplina in disciplinas|dictsort:"name" %}
+            <a href="{% url 'cursos:detalhes_disciplina' curso.id disciplina.id %}">
+                <li class="item">{{ disciplina.name }}</li>
+            </a>
+        {% endfor %}
+    </ul>
+
+    {% if request.user.is_authenticated %}
+        <a href="{% url 'cursos:edita_curso' curso.id %}">
+            <button class="newBtn">Editar informação do Curso</button>
+        </a>
+
+        <a href="{% url 'cursos:apaga_curso' curso.id %}">
+            <button class="newBtn">Apagar o Curso</button>
+        </a>
+
+        <a href="{% url 'cursos:nova_disciplina' curso.id %}">
+            <button class="newBtn">Inserir nova Disciplina</button>
+        </a>
+    {% endif %}
+{% endblock %}

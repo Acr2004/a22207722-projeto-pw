@@ -1,0 +1,35 @@
+{% extends 'cursos/layout.html' %}
+
+{% block content %}
+<a id="goBack" href="{% url 'cursos:detalhes_curso' disciplina.curso.id %}"><i class="fa-solid fa-arrow-left"></i> Voltar ao curso</a>
+
+<h1 id="title">{{ disciplina.name }}</h1>
+<h2 id="etcs">ECTS: {{ disciplina.ects }}</h2>
+
+<ul class="list">
+    <h3 class="title-list">Projetos</h3>
+    {% for project in projects|dictsort:"name" %}
+        <li>
+            <a href="{% url 'cursos:detalhes_projeto' project.id %}">{{ project.name }}</a>
+        </li>
+    {% endfor %}
+</ul>
+
+<ul class="list">
+    <h3 class="title-list">Linguagens</h3>
+    {% for linguagem in linguagens|dictsort:"name" %}
+        <li>
+            <p>{{ linguagem.name }}</p>
+        </li>
+    {% endfor %}
+</ul>
+
+<ul class="list">
+    <h3 class="title-list">Docentes</h3>
+    {% for docente in docentes|dictsort:"name" %}
+        <li>
+            <p>{{ docente.name }}</p>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
